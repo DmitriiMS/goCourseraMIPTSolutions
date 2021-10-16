@@ -85,7 +85,7 @@ func worker(out io.Writer, path string, printFiles bool, prefix string) error {
 			newPrefix = prefix + "│	"
 		}
 		fmt.Fprintln(out, prefix+lines+dir.Name()+size)               // print the string
-		err = worker(out, path+"/"+dir.Name(), printFiles, newPrefix) // go deeper (if it's a file, it will return and print nothing)
+		err = worker(out, path+"/"+dir.Name(), printFiles, newPrefix) // go deeper
 		if err != nil {
 			return err
 		}
